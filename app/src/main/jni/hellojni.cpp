@@ -7,7 +7,7 @@ extern "C"
 JNIEXPORT jstring
 
 JNICALL
-Java_com_github_iredbyte_ndk_1example_MainActivity_stringFromJNI(
+Java_com_github_iredbyte_ndk_1example_storage_PowerOfStroustrup_stringFromJNI(
         JNIEnv *env,
         jobject activity
 ) {
@@ -44,21 +44,4 @@ Java_com_github_iredbyte_ndk_1example_MainActivity_stringFromJNI(
 #define ABI "unknown"
 #endif
     return env->NewStringUTF("Hello from JNI !  Compiled with ABI " ABI ".");
-}
-
-extern "C" JNIEXPORT jdoubleArray
-
-JNICALL
-Java_com_github_iredbyte_ndk_1example_MainActivity_markovPoissonProcess(
-        JNIEnv *env,
-        jobject activity
-) {
-    double lambda = 6.2;
-    double t = 10;
-    std::vector<double> data = poissonProcess(lambda, t);
-    jdouble *outArray = &data[0];
-    jdoubleArray outJNIArray = (*env).NewDoubleArray(data.size());
-    if (outJNIArray == NULL) return NULL;
-    (*env).SetDoubleArrayRegion(outJNIArray, 0, data.size(), outArray);
-    return outJNIArray;
 }
