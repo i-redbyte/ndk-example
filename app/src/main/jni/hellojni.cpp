@@ -11,8 +11,7 @@ Java_com_github_iredbyte_ndk_1example_MainActivity_stringFromJNI(
         JNIEnv *env,
         jobject activity
 ) {
-//    std::string appKey = "PuTy0uR4Ppl1C4TioNk3yH3re";
-//    return env->NewStringUTF(appKey.c_str());
+
 #if defined(__arm__)
 #if defined(__ARM_ARCH_7A__)
 #if defined(__ARM_NEON__)
