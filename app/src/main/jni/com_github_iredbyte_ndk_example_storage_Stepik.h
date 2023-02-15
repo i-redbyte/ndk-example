@@ -15,6 +15,22 @@ extern "C" {
 JNIEXPORT void JNICALL Java_com_github_iredbyte_ndk_1example_storage_Stepik_helloWord
   (JNIEnv *, jobject);
 
+/*
+ * Class:     com_github_iredbyte_ndk_example_storage_Stepik
+ * Method:    power
+ * Signature: (II)I
+ */
+JNIEXPORT jint JNICALL Java_com_github_iredbyte_ndk_1example_storage_Stepik_power
+  (JNIEnv *, jobject, jint, jint);
+
+/*
+ * Class:     com_github_iredbyte_ndk_example_storage_Stepik
+ * Method:    power_recursion
+ * Signature: (II)I
+ */
+JNIEXPORT jint JNICALL Java_com_github_iredbyte_ndk_1example_storage_Stepik_power_1recursion
+  (JNIEnv *, jobject, jint, jint);
+
 #ifdef __cplusplus
 }
 #endif
