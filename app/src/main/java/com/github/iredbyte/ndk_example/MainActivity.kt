@@ -4,7 +4,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import com.github.iredbyte.ndk_example.storage.PowerOfStroustrup
+import com.github.iredbyte.ndk_example.storage.Stepik
 
 class MainActivity : AppCompatActivity() {
 
@@ -12,12 +12,13 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         val tvHello = findViewById<TextView>(R.id.text_view_hello_neon)
-        val pos = PowerOfStroustrup()
-        tvHello.text = pos.stringFromJNI()
-        pos.markovPoissonProcess()?.let {
-            Log.d("_debug", "Markov:${it.size} ");
-            it.forEachIndexed { index, arr -> Log.d("_debug", "[$index] : $arr "); }
-        }
+        val stepik = Stepik()
+        stepik.helloWord()
+//        tvHello.text = pos.stringFromJNI()
+//        pos.markovPoissonProcess()?.let {
+//            Log.d("_debug", "Markov:${it.size} ");
+//            it.forEachIndexed { index, arr -> Log.d("_debug", "[$index] : $arr "); }
+//        }
     }
 
 }

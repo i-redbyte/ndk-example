@@ -1,3 +1,16 @@
 #My NDK Experiments #
 
-In this repository I will play with NDK and look at the interaction between Kotlin/Java and C/C++
+Experiments for C/C++ with Android:
+
+Started adding:
+
+- ** Solutions for the ![course](https://stepik.org/course/7/syllabus adapted for android ndk) **
+
+##Useful##
+
+- External tool for generate jni header
+
+![](/pictures/javah.png)
+
+Arguments: -h $ContentRoot$/jni $FileDir$/$FileName$
+
