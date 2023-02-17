@@ -30,6 +30,16 @@ int power_recursion(int x, unsigned p) {
 
 #pragma clang diagnostic pop
 
+// Напишите программу для вычисления целочисленного логарифма по основанию 2.
+int log2(int x) {
+    int result = 0;
+    while (x >= 1) {
+        ++result;
+        x = x >> 1;
+    }
+    return --result;
+}
+
 extern "C" JNIEXPORT void JNICALL Java_com_github_iredbyte_ndk_1example_storage_Stepik_helloWord
         (JNIEnv *env, jobject) {
     std::cout << "Hello from C++ !!!" << std::endl;
@@ -50,4 +60,9 @@ extern "C" JNIEXPORT jint JNICALL Java_com_github_iredbyte_ndk_1example_storage_
         (JNIEnv *, jobject, jint a, jint b, jint c) {
     MAX(a, b, c)
     return c;
+}
+
+extern "C" JNIEXPORT jint JNICALL Java_com_github_iredbyte_ndk_1example_storage_Stepik_log2
+        (JNIEnv *, jobject, jint x) {
+    return log2(x);
 }

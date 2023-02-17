@@ -39,6 +39,14 @@ JNIEXPORT jint JNICALL Java_com_github_iredbyte_ndk_1example_storage_Stepik_powe
 JNIEXPORT jint JNICALL Java_com_github_iredbyte_ndk_1example_storage_Stepik_max3
   (JNIEnv *, jobject, jint, jint, jint);
 
+/*
+ * Class:     com_github_iredbyte_ndk_example_storage_Stepik
+ * Method:    log2
+ * Signature: (I)I
+ */
+JNIEXPORT jint JNICALL Java_com_github_iredbyte_ndk_1example_storage_Stepik_log2
+  (JNIEnv *, jobject, jint);
+
 #ifdef __cplusplus
 }
 #endif
