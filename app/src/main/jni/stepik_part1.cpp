@@ -22,10 +22,12 @@ int power(int x, unsigned p) {
 
 #pragma clang diagnostic push
 #pragma ide diagnostic ignored "misc-no-recursion"
+
 int power_recursion(int x, unsigned p) {
     if (p == 0) return 1;
     return x * power_recursion(x, p - 1);
 }
+
 #pragma clang diagnostic pop
 
 extern "C" JNIEXPORT void JNICALL Java_com_github_iredbyte_ndk_1example_storage_Stepik_helloWord
@@ -41,4 +43,11 @@ extern "C" JNIEXPORT jint JNICALL Java_com_github_iredbyte_ndk_1example_storage_
 extern "C" JNIEXPORT jint JNICALL Java_com_github_iredbyte_ndk_1example_storage_Stepik_power_1recursion
         (JNIEnv *, jobject, jint x, jint p) {
     return power_recursion(x, p);
+}
+
+
+extern "C" JNIEXPORT jint JNICALL Java_com_github_iredbyte_ndk_1example_storage_Stepik_max3
+        (JNIEnv *, jobject, jint a, jint b, jint c) {
+    MAX(a, b, c)
+    return c;
 }

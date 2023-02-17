@@ -31,6 +31,14 @@ JNIEXPORT jint JNICALL Java_com_github_iredbyte_ndk_1example_storage_Stepik_powe
 JNIEXPORT jint JNICALL Java_com_github_iredbyte_ndk_1example_storage_Stepik_power_1recursion
   (JNIEnv *, jobject, jint, jint);
 
+/*
+ * Class:     com_github_iredbyte_ndk_example_storage_Stepik
+ * Method:    max3
+ * Signature: (III)I
+ */
+JNIEXPORT jint JNICALL Java_com_github_iredbyte_ndk_1example_storage_Stepik_max3
+  (JNIEnv *, jobject, jint, jint, jint);
+
 #ifdef __cplusplus
 }
 #endif
