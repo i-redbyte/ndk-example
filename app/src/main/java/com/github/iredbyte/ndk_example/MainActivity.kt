@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun solutionStepikPart1() {
         val part1 = findViewById<TextView>(R.id.stepik_power_solution)
-        stepik.helloWord()
+        part1.setOnClickListener { stepik.helloWord() }
         @SuppressLint("SetTextI18n")
         fun power() {
             val powerCpp: (Int, Int) -> String = { x, y ->

@@ -1,5 +1,9 @@
 #include <jni.h>
 #include <iostream>
+#include <android/log.h>
+
+#define LOGI(...) ((void)__android_log_print(ANDROID_LOG_INFO, "CppTheBest", __VA_ARGS__))
+#define LOGD(...) ((void)__android_log_print(ANDROID_LOG_DEBUG, "_debugNative", __VA_ARGS__))
 
 /* присваивает r максимум из x и y */
 #define MAX(x, y, r)  \
@@ -43,6 +47,8 @@ int log2(int x) {
 extern "C" JNIEXPORT void JNICALL Java_com_github_iredbyte_ndk_1example_storage_Stepik_helloWord
         (JNIEnv *env, jobject) {
     std::cout << "Hello from C++ !!!" << std::endl;
+    LOGD("Hello from NDK !!!");
+    LOGI("Hello from JNI !!!");
 }
 
 extern "C" JNIEXPORT jint JNICALL Java_com_github_iredbyte_ndk_1example_storage_Stepik_power
