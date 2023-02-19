@@ -1,13 +1,25 @@
 package com.github.iredbyte.ndk_example
 
 import android.annotation.SuppressLint
+import android.content.Context
 import android.os.Bundle
+import android.view.View
+import android.view.inputmethod.InputMethodManager
+import android.widget.Button
+import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.AppCompatButton
 import com.github.iredbyte.ndk_example.storage.Stepik
+import com.google.android.material.snackbar.Snackbar
 
 class MainActivity : AppCompatActivity() {
     private val stepik = Stepik()
+    private val btnSolveQuadraticEquation by lazy { findViewById<AppCompatButton>(R.id.btnSolveQuadraticEquation) }
+    private val etValueA by lazy { findViewById<EditText>(R.id.etValueA) }
+    private val etValueB by lazy { findViewById<EditText>(R.id.etValueB) }
+    private val etValueC by lazy { findViewById<EditText>(R.id.etValueC) }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -17,6 +29,9 @@ class MainActivity : AppCompatActivity() {
     private fun solutionStepikPart1() {
         val part1 = findViewById<TextView>(R.id.stepik_power_solution)
         part1.setOnClickListener { stepik.helloWord() }
+        btnSolveQuadraticEquation.setOnClickListener {
+            quadraticEquation(it)
+        }
         @SuppressLint("SetTextI18n")
         fun power() {
             val powerCpp: (Int, Int) -> String = { x, y ->
@@ -33,6 +48,24 @@ class MainActivity : AppCompatActivity() {
                     "\nLog2(1024) = ${stepik.log2(1024)}"
         }
         power()
+    }
+
+    private fun quadraticEquation(view: View) {
+        val imm: InputMethodManager = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        imm.hideSoftInputFromWindow(view.windowToken, 0)
+        try {
+            val a = etValueA.text.toString().toInt()
+            val b = etValueB.text.toString().toInt()
+            val c = etValueC.text.toString().toInt()
+            Snackbar.make(
+                view,
+                stepik.quadratic_equation(a, b, c),
+                Snackbar.LENGTH_LONG
+            )
+                .show()
+        } catch (error: NumberFormatException) {
+            Toast.makeText(this, getString(R.string.error), Toast.LENGTH_LONG).show()
+        }
     }
 
 }

@@ -23,4 +23,6 @@ public class Stepik {
     public native int max3(int a, int b, int c);
 
     public native int log2(int x);
+
+    public native String quadratic_equation(int a, int b, int c);
 }

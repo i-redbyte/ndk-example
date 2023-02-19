@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Stroustrup power</string>
+    <string name="coefficientC">C</string>
+    <string name="coefficientB">B</string>
+    <string name="coefficientA">A</string>
+    <string name="solve_quadratic_equation">Solve quadratic equation</string>
+    <string name="zeroValue">0</string>
+    <string name="error">Please input the coefficients of the quadratic equation</string>
 </resources>

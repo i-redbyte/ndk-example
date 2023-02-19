@@ -1,5 +1,6 @@
 #include <jni.h>
 #include <iostream>
+#include <string>
 #include <android/log.h>
 
 #define LOGI(...) ((void)__android_log_print(ANDROID_LOG_INFO, "CppTheBest", __VA_ARGS__))
@@ -71,4 +72,47 @@ extern "C" JNIEXPORT jint JNICALL Java_com_github_iredbyte_ndk_1example_storage_
 extern "C" JNIEXPORT jint JNICALL Java_com_github_iredbyte_ndk_1example_storage_Stepik_log2
         (JNIEnv *, jobject, jint x) {
     return log2(x);
+}
+
+/**
+ * Напишите программу для решения квадратных уравнений вида a x^2 + b x + c = 0
+ * На вход программа получает три целых числа: a , b и c, соответственно. При этом гарантируется, что a != 0
+ * На вывод программа должна вывести два вещественных корня уравнения, разделённые пробелом.
+ * Если вещественных корней нет, то программа должна вывести строку "No real roots".
+ * Если у уравнения имеется только один корень (кратный корень), то программа должна вывести его дважды.
+ * Порядок вывода корней не важен. Ничего, кроме этого, выводить не нужно.
+ * Для вычислений с плавающей точкой используйте тип double.
+ * При выполнении задания вам может оказаться полезной функция sqrt из заголовочного файла cmath.
+ * */
+
+
+extern "C" JNIEXPORT jstring JNICALL Java_com_github_iredbyte_ndk_1example_storage_Stepik_quadratic_1equation
+        (JNIEnv *env, jobject, jint a, jint b, jint c) {
+    int d = (b * b) - 4 * a * c;
+    if (d < 0) {
+        return env->NewStringUTF("No real roots");
+    } else if (d == 1) {
+        int x = (-b / (2 * a));
+        char str[100];
+        sprintf(str, "One root: x1 = %d, x2 = %d", x, x);
+        return env->NewStringUTF(str);
+    } else {
+        double x1 = (-b + sqrt(d)) / (2 * a);
+        double x2 = (-b - sqrt(d)) / (2 * a);
+        char str[100];
+        sprintf(str, "Roots: x1 = %f, x2 = %f", x1, x2);
+        return env->NewStringUTF(str);
+    }
+}
+
+/* Java String to C String */
+static int jstr_to_cstr(JNIEnv *env, jstring jstr, char *cstr) {
+    jsize jlen, clen;
+    clen = env->GetStringUTFLength(jstr);
+    jlen = env->GetStringLength(jstr);
+    env->GetStringUTFRegion(jstr, 0, jlen, cstr);
+    if (env->ExceptionCheck()) {
+        return -EIO;
+    }
+    return 0;
 }
