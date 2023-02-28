@@ -2,10 +2,10 @@
 
 Experiments for C/C++ with Android:
 
-Started adding:
+Implemented:
 
-- **Solutions for the ![course](https://stepik.org/course/7/syllabus adapted for android ndk)**
-
+- [Stepik course](/app/src/main/jni/stepik/README.md)
+ 
 ## Useful ##
 
 - External tool for generate jni header
