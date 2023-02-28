@@ -13,7 +13,9 @@ public class Stepik {
     public Stepik() {
     }
 
-
+    /**
+     * PART1
+     */
     public native void helloWord();
 
     public native int power(int x, int p);
@@ -25,4 +27,9 @@ public class Stepik {
     public native int log2(int x);
 
     public native String quadratic_equation(int a, int b, int c);
+
+    /**
+     * PART2
+     * */
+    public native void rotate(int[] array, int size, int shift);
 }

@@ -6,7 +6,7 @@
 #define LOGI(...) ((void)__android_log_print(ANDROID_LOG_INFO, "CppTheBest", __VA_ARGS__))
 #define LOGD(...) ((void)__android_log_print(ANDROID_LOG_DEBUG, "_debugNative", __VA_ARGS__))
 
-/* присваивает r максимум из x и y */
+
 #define MAX(x, y, r)  \
 {                     \
 int xx = x;           \
@@ -14,10 +14,7 @@ int yy = y;           \
 r = xx > yy?xx:yy;    \
 }
 
-// определите только функцию power_recurion, где
-//    x - число, которое нужно возвести в степень
-//    p - степень, в которую нужно возвести x
-//
+
 int power(int x, unsigned p) {
     if (p == 0) return 1;
     int answer = x;
@@ -35,7 +32,6 @@ int power_recursion(int x, unsigned p) {
 
 #pragma clang diagnostic pop
 
-// Напишите программу для вычисления целочисленного логарифма по основанию 2.
 int log2(int x) {
     int result = 0;
     while (x >= 1) {
@@ -91,16 +87,4 @@ extern "C" JNIEXPORT jstring JNICALL Java_com_github_iredbyte_ndk_1example_stora
         sprintf(str, "Roots: x1 = %f, x2 = %f", x1, x2);
         return env->NewStringUTF(str);
     }
-}
-
-/* Java String to C String */
-static int jstr_to_cstr(JNIEnv *env, jstring jstr, char *cstr) {
-    jsize jlen, clen;
-    clen = env->GetStringUTFLength(jstr);
-    jlen = env->GetStringLength(jstr);
-    env->GetStringUTFRegion(jstr, 0, jlen, cstr);
-    if (env->ExceptionCheck()) {
-        return -EIO;
-    }
-    return 0;
 }

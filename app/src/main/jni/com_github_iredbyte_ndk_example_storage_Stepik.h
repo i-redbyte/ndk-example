@@ -55,6 +55,14 @@ JNIEXPORT jint JNICALL Java_com_github_iredbyte_ndk_1example_storage_Stepik_log2
 JNIEXPORT jstring JNICALL Java_com_github_iredbyte_ndk_1example_storage_Stepik_quadratic_1equation
   (JNIEnv *, jobject, jint, jint, jint);
 
+/*
+ * Class:     com_github_iredbyte_ndk_example_storage_Stepik
+ * Method:    rotate
+ * Signature: ([III)V
+ */
+JNIEXPORT void JNICALL Java_com_github_iredbyte_ndk_1example_storage_Stepik_rotate
+  (JNIEnv *, jobject, jintArray, jint, jint);
+
 #ifdef __cplusplus
 }
 #endif

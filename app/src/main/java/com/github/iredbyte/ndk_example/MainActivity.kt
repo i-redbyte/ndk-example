@@ -3,6 +3,7 @@ package com.github.iredbyte.ndk_example
 import android.annotation.SuppressLint
 import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.widget.Button
@@ -24,6 +25,15 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         solutionStepikPart1()
+        solutionStepikPart2()
+    }
+
+    private fun solutionStepikPart2() {
+        val arr = intArrayOf(1, 2, 3, 4, 5)
+        val transform = {element: Int -> "$element "}
+        Log.d("_debug", "solutionStepikPart2: ${arr.map(transform)}")
+        stepik.rotate(arr, arr.size, 2)
+        Log.d("_debug", "solutionStepikPart2: ${arr.map(transform)}")
     }
 
     private fun solutionStepikPart1() {
