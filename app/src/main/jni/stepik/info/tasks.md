@@ -1,6 +1,6 @@
 # Первая часть курса
 
-### Задание / [Решение](https://github.com/i-redbyte/ndk-example/blob/8ba26d27e2294bbb9050d61dc03efa74ed5dfc6d/app/src/main/jni/stepik/stepik_part1.cpp:77)
+### Задание / [Решение](https://github.com/i-redbyte/ndk-example/blob/8ba26d27e2294bbb9050d61dc03efa74ed5dfc6d/app/src/main/jni/stepik/stepik_part1.cpp)
 ```
 /**
  * Напишите программу для решения квадратных уравнений вида a x^2 + b x + c = 0
