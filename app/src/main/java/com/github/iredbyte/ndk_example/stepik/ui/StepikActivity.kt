@@ -2,8 +2,8 @@ package com.github.iredbyte.ndk_example.stepik.ui
 
 import android.content.Context
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager2.widget.ViewPager2
 import com.github.iredbyte.ndk_example.R
 import com.google.android.material.tabs.TabLayout
@@ -26,7 +26,7 @@ class StepikActivity : AppCompatActivity() {
         val pagerAdapter = StepikPageAdapter(this)
         viewPager.adapter = pagerAdapter
         TabLayoutMediator(tabLayout, viewPager) { tab, position ->
-            val tabNames = listOf(getString(R.string.stepik_part1), getString(R.string.stepik_part2))
+            val tabNames = listOf(getString(R.string.stepik_page_title_part1), getString(R.string.stepik_page_title_part2))
             tab.text = tabNames[position]
         }.attach()
     }

@@ -5,7 +5,6 @@ message(STATUS "ANDROID_STL ${ANDROID_STL}")
 #add_library(native-lib)
 
 add_library(stepik SHARED
-        com_github_iredbyte_ndk_example_storage_Stepik.h
         stepik/stepik_part1.cpp
         stepik/stepik_part2.cpp
         )

@@ -5,12 +5,11 @@
         android:color="#80FFFFFF"
         />
 
-    <corners android:radius="25dp" />
+    <corners android:radius="8dp" />
 
     <gradient
         android:angle="270"
-        android:centerColor="@color/greenButton"
-        android:endColor="@color/teal_200"
-        android:startColor="@color/teal_200"
+        android:endColor="@color/teal_700"
+        android:startColor="@color/blue"
         />
 </shape>

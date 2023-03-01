@@ -41,36 +41,36 @@ int log2(int x) {
     return --result;
 }
 
-extern "C" JNIEXPORT void JNICALL Java_com_github_iredbyte_ndk_1example_storage_Stepik_helloWord
+extern "C" JNIEXPORT void JNICALL Java_com_github_iredbyte_ndk_1example_stepik_storage_Stepik_helloWord
         (JNIEnv *env, jobject) {
     std::cout << "Hello from C++ !!!" << std::endl;
     LOGD("Hello from NDK !!!");
     LOGI("Hello from JNI !!!");
 }
 
-extern "C" JNIEXPORT jint JNICALL Java_com_github_iredbyte_ndk_1example_storage_Stepik_power
+extern "C" JNIEXPORT jint JNICALL Java_com_github_iredbyte_ndk_1example_stepik_storage_Stepik_power
         (JNIEnv *, jobject, jint x, jint p) {
     return power(x, p);
 }
 
-extern "C" JNIEXPORT jint JNICALL Java_com_github_iredbyte_ndk_1example_storage_Stepik_power_1recursion
+extern "C" JNIEXPORT jint JNICALL Java_com_github_iredbyte_ndk_1example_stepik_storage_Stepik_power_1recursion
         (JNIEnv *, jobject, jint x, jint p) {
     return power_recursion(x, p);
 }
 
 
-extern "C" JNIEXPORT jint JNICALL Java_com_github_iredbyte_ndk_1example_storage_Stepik_max3
+extern "C" JNIEXPORT jint JNICALL Java_com_github_iredbyte_ndk_1example_stepik_storage_Stepik_max3
         (JNIEnv *, jobject, jint a, jint b, jint c) {
     MAX(a, b, c)
     return c;
 }
 
-extern "C" JNIEXPORT jint JNICALL Java_com_github_iredbyte_ndk_1example_storage_Stepik_log2
+extern "C" JNIEXPORT jint JNICALL Java_com_github_iredbyte_ndk_1example_stepik_storage_Stepik_log2
         (JNIEnv *, jobject, jint x) {
     return log2(x);
 }
 
-extern "C" JNIEXPORT jstring JNICALL Java_com_github_iredbyte_ndk_1example_storage_Stepik_quadratic_1equation
+extern "C" JNIEXPORT jstring JNICALL Java_com_github_iredbyte_ndk_1example_stepik_storage_Stepik_quadratic_1equation
         (JNIEnv *env, jobject, jint a, jint b, jint c) {
     int d = (b * b) - 4 * a * c;
     if (d < 0) {
