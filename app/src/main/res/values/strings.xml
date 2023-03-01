@@ -9,4 +9,5 @@
     <string name="stepik_error_quadratic">Please input the coefficients of the quadratic equation</string>
     <string name="stepik_page_title_part1">Step 1</string>
     <string name="stepik_page_title_part2">Step 2</string>
+    <string name="stepik_page_part2_generate_new">Step 2</string>
 </resources>

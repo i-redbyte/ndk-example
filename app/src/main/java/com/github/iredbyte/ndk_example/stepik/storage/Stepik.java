@@ -20,13 +20,13 @@ public class Stepik {
 
     public native int power(int x, int p);
 
-    public native int power_recursion(int x, int p);
+    public native int powerRecursion(int x, int p);
 
     public native int max3(int a, int b, int c);
 
     public native int log2(int x);
 
-    public native String quadratic_equation(int a, int b, int c);
+    public native String quadraticEquation(int a, int b, int c);
 
     /**
      * PART2

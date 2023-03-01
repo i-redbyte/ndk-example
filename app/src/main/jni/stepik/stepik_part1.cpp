@@ -53,7 +53,7 @@ extern "C" JNIEXPORT jint JNICALL Java_com_github_iredbyte_ndk_1example_stepik_s
     return power(x, p);
 }
 
-extern "C" JNIEXPORT jint JNICALL Java_com_github_iredbyte_ndk_1example_stepik_storage_Stepik_power_1recursion
+extern "C" JNIEXPORT jint JNICALL Java_com_github_iredbyte_ndk_1example_stepik_storage_Stepik_powerRecursion
         (JNIEnv *, jobject, jint x, jint p) {
     return power_recursion(x, p);
 }
@@ -70,7 +70,7 @@ extern "C" JNIEXPORT jint JNICALL Java_com_github_iredbyte_ndk_1example_stepik_s
     return log2(x);
 }
 
-extern "C" JNIEXPORT jstring JNICALL Java_com_github_iredbyte_ndk_1example_stepik_storage_Stepik_quadratic_1equation
+extern "C" JNIEXPORT jstring JNICALL Java_com_github_iredbyte_ndk_1example_stepik_storage_Stepik_quadraticEquation
         (JNIEnv *env, jobject, jint a, jint b, jint c) {
     int d = (b * b) - 4 * a * c;
     if (d < 0) {
