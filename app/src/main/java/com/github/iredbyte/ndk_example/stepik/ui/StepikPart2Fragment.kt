@@ -23,6 +23,13 @@ class StepikPart2Fragment : Fragment(R.layout.fragment_stepik_part2) {
 
     private fun solutionStepikPart2() {
         rotateArray(getRandomArray())
+        concatStrings()
+    }
+
+    private fun concatStrings() {
+        val s = "I love "
+        val result = "result strcat fun: ${stepik.strcat(s, "C++")}"
+        requireView().findViewById<TextView>(R.id.tvConcatString).text = result
     }
 
     private fun getRandomArray(maxN: Int = 10): IntArray {

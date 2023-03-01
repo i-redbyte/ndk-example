@@ -25,10 +25,10 @@ JNIEXPORT jint JNICALL Java_com_github_iredbyte_ndk_1example_stepik_storage_Step
 
 /*
  * Class:     com_github_iredbyte_ndk_example_stepik_storage_Stepik
- * Method:    power_recursion
+ * Method:    powerRecursion
  * Signature: (II)I
  */
-JNIEXPORT jint JNICALL Java_com_github_iredbyte_ndk_1example_stepik_storage_Stepik_power_1recursion
+JNIEXPORT jint JNICALL Java_com_github_iredbyte_ndk_1example_stepik_storage_Stepik_powerRecursion
   (JNIEnv *, jobject, jint, jint);
 
 /*
@@ -49,10 +49,10 @@ JNIEXPORT jint JNICALL Java_com_github_iredbyte_ndk_1example_stepik_storage_Step
 
 /*
  * Class:     com_github_iredbyte_ndk_example_stepik_storage_Stepik
- * Method:    quadratic_equation
+ * Method:    quadraticEquation
  * Signature: (III)Ljava/lang/String;
  */
-JNIEXPORT jstring JNICALL Java_com_github_iredbyte_ndk_1example_stepik_storage_Stepik_quadratic_1equation
+JNIEXPORT jstring JNICALL Java_com_github_iredbyte_ndk_1example_stepik_storage_Stepik_quadraticEquation
   (JNIEnv *, jobject, jint, jint, jint);
 
 /*
@@ -62,6 +62,14 @@ JNIEXPORT jstring JNICALL Java_com_github_iredbyte_ndk_1example_stepik_storage_S
  */
 JNIEXPORT void JNICALL Java_com_github_iredbyte_ndk_1example_stepik_storage_Stepik_rotate
   (JNIEnv *, jobject, jintArray, jint, jint);
+
+/*
+ * Class:     com_github_iredbyte_ndk_example_stepik_storage_Stepik
+ * Method:    strcat
+ * Signature: (Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+ */
+JNIEXPORT jstring JNICALL Java_com_github_iredbyte_ndk_1example_stepik_storage_Stepik_strcat
+  (JNIEnv *, jobject, jstring, jstring);
 
 #ifdef __cplusplus
 }

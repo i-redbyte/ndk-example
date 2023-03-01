@@ -30,6 +30,8 @@ public class Stepik {
 
     /**
      * PART2
-     * */
+     */
     public native void rotate(int[] array, int size, int shift);
+
+    public native String strcat(String to, String from);
 }
