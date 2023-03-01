@@ -1,4 +1,4 @@
-package com.github.iredbyte.ndk_example.storage;
+package com.github.iredbyte.ndk_example.stepik.storage;
 
 /**
  * solutions for the course
