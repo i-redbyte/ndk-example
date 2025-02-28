@@ -10,4 +10,11 @@
     <string name="stepik_page_title_part1">Step 1</string>
     <string name="stepik_page_title_part2">Step 2</string>
     <string name="stepik_page_part2_generate_new">Step 2</string>
+    <string name="ndk_man_keyvalue">NDK MAN</string>
+    <string name="ndk_man_keyvalue_title">Сохраните или получите значение из NDK хранилища</string>
+    <string name="ndk_man_key_hint">Ключ</string>
+    <string name="ndk_man_value_hint">Значение\n</string>
+    <string name="ndk_man_btn_getValue">Получить значение</string>
+    <string name="ndk_man_btn_setValue">Сохранить значение</string>
+    <string name="ndk_man_type">Тип:</string>
 </resources>
