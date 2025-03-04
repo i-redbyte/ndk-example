@@ -46,6 +46,7 @@ class NdkManActivity : AppCompatActivity() {
             when (type) {
                 StoreType.String -> store.setString(key, value)
                 StoreType.Integer -> store.setInteger(key, value.toInt())
+                StoreType.Boolean -> store.setBoolean(key, true)
             }
         } catch (ex: Exception) {
             displayMessage("Incorrect value.")
@@ -78,6 +79,10 @@ class NdkManActivity : AppCompatActivity() {
 
             StoreType.String -> {
                 etValue.setText(store.getString(key))
+            }
+
+            StoreType.Boolean -> {
+                etValue.setText(store.getBoolean(key).toString())
             }
         }
     }

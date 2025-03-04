@@ -145,3 +145,23 @@ Java_com_github_iredbyte_ndk_1example_ndkman_storage_NdkMan_setInteger
         entry->value.integer = value;
     }
 }
+extern "C" JNIEXPORT jboolean JNICALL
+Java_com_github_iredbyte_ndk_1example_ndkman_storage_NdkMan_getBoolean
+        (JNIEnv *pEnv, jobject pThis, jstring key) {
+    StoreEntry *entry = findEntry(pEnv, &store, key);
+    if (isEntryValid(pEnv, entry, StoreType_Boolean)) {
+        return entry->value.boolean;
+    } else {
+        return false;
+    }
+}
+
+extern "C" JNIEXPORT void JNICALL
+Java_com_github_iredbyte_ndk_1example_ndkman_storage_NdkMan_setBoolean
+        (JNIEnv *pEnv, jobject pThis, jstring key, jboolean value) {
+    StoreEntry *entry = allocateEntry(pEnv, &store, key);
+    if (entry != NULL) {
+        entry->type = StoreType_Boolean;
+        entry->value.boolean = value;
+    }
+}

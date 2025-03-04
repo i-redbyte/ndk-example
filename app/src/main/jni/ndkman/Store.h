@@ -9,11 +9,13 @@
 typedef enum {
     StoreType_Integer,
     StoreType_String,
+    StoreType_Boolean,
 } StoreType;
 
 typedef union {
     int32_t integer;
     char *string;
+    bool boolean;
 } StoreValue;
 
 typedef struct {

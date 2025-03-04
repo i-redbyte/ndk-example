@@ -47,6 +47,22 @@ JNIEXPORT jint JNICALL Java_com_github_iredbyte_ndk_1example_ndkman_storage_NdkM
 JNIEXPORT void JNICALL Java_com_github_iredbyte_ndk_1example_ndkman_storage_NdkMan_setInteger
   (JNIEnv *, jobject, jstring, jint);
 
+/*
+ * Class:     com_github_iredbyte_ndk_example_ndkman_storage_NdkMan
+ * Method:    getBoolean
+ * Signature: (Ljava/lang/String;)Z
+ */
+JNIEXPORT jboolean JNICALL Java_com_github_iredbyte_ndk_1example_ndkman_storage_NdkMan_getBoolean
+  (JNIEnv *, jobject, jstring);
+
+/*
+ * Class:     com_github_iredbyte_ndk_example_ndkman_storage_NdkMan
+ * Method:    setBoolean
+ * Signature: (Ljava/lang/String;Z)V
+ */
+JNIEXPORT void JNICALL Java_com_github_iredbyte_ndk_1example_ndkman_storage_NdkMan_setBoolean
+  (JNIEnv *, jobject, jstring, jboolean);
+
 #ifdef __cplusplus
 }
 #endif

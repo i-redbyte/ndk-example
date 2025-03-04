@@ -18,4 +18,7 @@ public class NdkMan {
 
     public native void setInteger(String key, int value);
 
+    public native boolean getBoolean(String key);
+
+    public native void setBoolean(String key, boolean value);
 }
