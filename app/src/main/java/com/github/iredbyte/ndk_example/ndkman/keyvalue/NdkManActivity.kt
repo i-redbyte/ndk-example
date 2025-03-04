@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatButton
 import com.github.iredbyte.ndk_example.R
 import com.github.iredbyte.ndk_example.ndkman.storage.NdkMan
+import java.util.Locale
 import java.util.regex.Pattern
 
 class NdkManActivity : AppCompatActivity() {
@@ -44,6 +45,7 @@ class NdkManActivity : AppCompatActivity() {
         try {
             when (type) {
                 StoreType.String -> store.setString(key, value)
+                StoreType.Integer -> store.setInteger(key, value.toInt())
             }
         } catch (ex: Exception) {
             displayMessage("Incorrect value.")
@@ -64,6 +66,16 @@ class NdkManActivity : AppCompatActivity() {
             return
         }
         when (type) {
+            StoreType.Integer -> {
+                etValue.setText(
+                    String.format(
+                        Locale.getDefault(),
+                        "%d",
+                        store.getInteger(key)
+                    )
+                )
+            }
+
             StoreType.String -> {
                 etValue.setText(store.getString(key))
             }

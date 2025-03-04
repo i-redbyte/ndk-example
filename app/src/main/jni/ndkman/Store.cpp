@@ -103,9 +103,7 @@ extern "C" JNIEXPORT jstring JNICALL
 Java_com_github_iredbyte_ndk_1example_ndkman_storage_NdkMan_getString
         (JNIEnv *pEnv, jobject pThis, jstring pKey) {
     const char *cstr = pEnv->GetStringUTFChars(pKey, NULL);
-    LOGD(">>pKey= %s", cstr);
     StoreEntry *entry = findEntry(pEnv, &store, pKey);
-    LOGD(">>>>", entry);
     if (isEntryValid(pEnv, entry, StoreType_String)) {
         return pEnv->NewStringUTF(entry->value.string);
     } else {
@@ -120,11 +118,30 @@ Java_com_github_iredbyte_ndk_1example_ndkman_storage_NdkMan_setString
     if (entry != NULL) {
         entry->type = StoreType_String;
         jsize stringLength = pEnv->GetStringUTFLength(pValue);
-        LOGD("stringLength %d", stringLength);
         const char *cstr = pEnv->GetStringUTFChars(pValue, NULL);
-        LOGD("pValue= %s", cstr);
         entry->value.string = new char[stringLength + 1];
         pEnv->GetStringUTFRegion(pValue, 0, stringLength, entry->value.string);
         entry->value.string[stringLength] = '\0';
+    }
+}
+
+extern "C" JNIEXPORT jint JNICALL
+Java_com_github_iredbyte_ndk_1example_ndkman_storage_NdkMan_getInteger
+        (JNIEnv *pEnv, jobject pThis, jstring key) {
+    StoreEntry *entry = findEntry(pEnv, &store, key);
+    if (isEntryValid(pEnv, entry, StoreType_Integer)) {
+        return entry->value.integer;
+    } else {
+        return 0;
+    }
+}
+
+extern "C" JNIEXPORT void JNICALL
+Java_com_github_iredbyte_ndk_1example_ndkman_storage_NdkMan_setInteger
+        (JNIEnv *pEnv, jobject pThis, jstring key, jint value) {
+    StoreEntry *entry = allocateEntry(pEnv, &store, key);
+    if (entry != NULL) {
+        entry->type = StoreType_Integer;
+        entry->value.integer = value;
     }
 }

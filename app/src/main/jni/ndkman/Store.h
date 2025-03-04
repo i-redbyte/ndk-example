@@ -7,10 +7,12 @@
 #define STORE_MAX_CAPACITY 16
 
 typedef enum {
-    StoreType_String
+    StoreType_Integer,
+    StoreType_String,
 } StoreType;
 
 typedef union {
+    int32_t integer;
     char *string;
 } StoreValue;
 

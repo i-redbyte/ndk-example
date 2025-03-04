@@ -31,6 +31,22 @@ JNIEXPORT jstring JNICALL Java_com_github_iredbyte_ndk_1example_ndkman_storage_N
 JNIEXPORT void JNICALL Java_com_github_iredbyte_ndk_1example_ndkman_storage_NdkMan_setString
   (JNIEnv *, jobject, jstring, jstring);
 
+/*
+ * Class:     com_github_iredbyte_ndk_example_ndkman_storage_NdkMan
+ * Method:    getInteger
+ * Signature: (Ljava/lang/String;)I
+ */
+JNIEXPORT jint JNICALL Java_com_github_iredbyte_ndk_1example_ndkman_storage_NdkMan_getInteger
+  (JNIEnv *, jobject, jstring);
+
+/*
+ * Class:     com_github_iredbyte_ndk_example_ndkman_storage_NdkMan
+ * Method:    setInteger
+ * Signature: (Ljava/lang/String;I)V
+ */
+JNIEXPORT void JNICALL Java_com_github_iredbyte_ndk_1example_ndkman_storage_NdkMan_setInteger
+  (JNIEnv *, jobject, jstring, jint);
+
 #ifdef __cplusplus
 }
 #endif
