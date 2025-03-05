@@ -165,3 +165,45 @@ Java_com_github_iredbyte_ndk_1example_ndkman_storage_NdkMan_setBoolean
         entry->value.boolean = value;
     }
 }
+
+extern "C" JNIEXPORT jfloat JNICALL
+Java_com_github_iredbyte_ndk_1example_ndkman_storage_NdkMan_getFloat
+        (JNIEnv *pEnv, jobject pThis, jstring key) {
+    StoreEntry *entry = findEntry(pEnv, &store, key);
+    if (isEntryValid(pEnv, entry, StoreType_Float)) {
+        return entry->value.float_t;
+    } else {
+        return 0;
+    }
+}
+
+extern "C" JNIEXPORT void JNICALL
+Java_com_github_iredbyte_ndk_1example_ndkman_storage_NdkMan_setFloat
+        (JNIEnv *pEnv, jobject pThis, jstring key, jfloat value) {
+    StoreEntry *entry = allocateEntry(pEnv, &store, key);
+    if (entry != NULL) {
+        entry->type = StoreType_Float;
+        entry->value.float_t = value;
+    }
+}
+
+extern "C" JNIEXPORT jdouble JNICALL
+Java_com_github_iredbyte_ndk_1example_ndkman_storage_NdkMan_getDouble
+        (JNIEnv *pEnv, jobject pThis, jstring key) {
+    StoreEntry *entry = findEntry(pEnv, &store, key);
+    if (isEntryValid(pEnv, entry, StoreType_Double)) {
+        return entry->value.double_t;
+    } else {
+        return 0;
+    }
+}
+
+extern "C" JNIEXPORT void JNICALL
+Java_com_github_iredbyte_ndk_1example_ndkman_storage_NdkMan_setDouble
+        (JNIEnv *pEnv, jobject pThis, jstring key, jdouble value) {
+    StoreEntry *entry = allocateEntry(pEnv, &store, key);
+    if (entry != NULL) {
+        entry->type = StoreType_Double;
+        entry->value.double_t = value;
+    }
+}

@@ -10,12 +10,16 @@ typedef enum {
     StoreType_Integer,
     StoreType_String,
     StoreType_Boolean,
+    StoreType_Float,
+    StoreType_Double,
 } StoreType;
 
 typedef union {
     int32_t integer;
     char *string;
     bool boolean;
+    double double_t;
+    float float_t;
 } StoreValue;
 
 typedef struct {

@@ -21,4 +21,12 @@ public class NdkMan {
     public native boolean getBoolean(String key);
 
     public native void setBoolean(String key, boolean value);
+
+    public native float getFloat(String key);
+
+    public native void setFloat(String key, float value);
+
+    public native double getDouble(String key);
+
+    public native void setDouble(String key, double value);
 }

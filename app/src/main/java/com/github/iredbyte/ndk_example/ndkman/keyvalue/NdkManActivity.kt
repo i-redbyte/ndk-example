@@ -47,6 +47,8 @@ class NdkManActivity : AppCompatActivity() {
                 StoreType.String -> store.setString(key, value)
                 StoreType.Integer -> store.setInteger(key, value.toInt())
                 StoreType.Boolean -> store.setBoolean(key, true)
+                StoreType.Float -> store.setFloat(key, value.toFloat())
+                StoreType.Double -> store.setDouble(key, value.toDouble())
             }
         } catch (ex: Exception) {
             displayMessage("Incorrect value.")
@@ -67,6 +69,26 @@ class NdkManActivity : AppCompatActivity() {
             return
         }
         when (type) {
+            StoreType.Double -> {
+                etValue.setText(
+                    String.format(
+                        Locale.getDefault(),
+                        "%.4f",
+                        store.getDouble(key)
+                    )
+                )
+            }
+
+            StoreType.Float -> {
+                etValue.setText(
+                    String.format(
+                        Locale.getDefault(),
+                        "%.2f",
+                        store.getFloat(key)
+                    )
+                )
+            }
+
             StoreType.Integer -> {
                 etValue.setText(
                     String.format(

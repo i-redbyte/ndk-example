@@ -63,6 +63,38 @@ JNIEXPORT jboolean JNICALL Java_com_github_iredbyte_ndk_1example_ndkman_storage_
 JNIEXPORT void JNICALL Java_com_github_iredbyte_ndk_1example_ndkman_storage_NdkMan_setBoolean
   (JNIEnv *, jobject, jstring, jboolean);
 
+/*
+ * Class:     com_github_iredbyte_ndk_example_ndkman_storage_NdkMan
+ * Method:    getFloat
+ * Signature: (Ljava/lang/String;)F
+ */
+JNIEXPORT jfloat JNICALL Java_com_github_iredbyte_ndk_1example_ndkman_storage_NdkMan_getFloat
+  (JNIEnv *, jobject, jstring);
+
+/*
+ * Class:     com_github_iredbyte_ndk_example_ndkman_storage_NdkMan
+ * Method:    setFloat
+ * Signature: (Ljava/lang/String;F)V
+ */
+JNIEXPORT void JNICALL Java_com_github_iredbyte_ndk_1example_ndkman_storage_NdkMan_setFloat
+  (JNIEnv *, jobject, jstring, jfloat);
+
+/*
+ * Class:     com_github_iredbyte_ndk_example_ndkman_storage_NdkMan
+ * Method:    getDouble
+ * Signature: (Ljava/lang/String;)D
+ */
+JNIEXPORT jdouble JNICALL Java_com_github_iredbyte_ndk_1example_ndkman_storage_NdkMan_getDouble
+  (JNIEnv *, jobject, jstring);
+
+/*
+ * Class:     com_github_iredbyte_ndk_example_ndkman_storage_NdkMan
+ * Method:    setDouble
+ * Signature: (Ljava/lang/String;D)V
+ */
+JNIEXPORT void JNICALL Java_com_github_iredbyte_ndk_1example_ndkman_storage_NdkMan_setDouble
+  (JNIEnv *, jobject, jstring, jdouble);
+
 #ifdef __cplusplus
 }
 #endif
